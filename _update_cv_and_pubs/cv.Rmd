@@ -1,0 +1,39 @@
+---
+name: Guillem Salazar
+address: "ETH Zürich, Switzerland"
+profilepic: "../images/profile.png"
+www: guillemsalazar.github.io
+email: "guillems@ethz.ch"
+github: GuillemSalazar
+orcid: 0000-0002-9786-1493
+date: "`r format(Sys.time(), '%B %Y')`"
+headcolor: 990000
+aboutme: "I use computational tools to understand how marine microbial communities are shaped and respond to environmental change."
+docname: cv
+output: 
+  vitae::moderncv:
+    theme: classic
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE)
+library(vitae)
+library(tinytex)
+```
+
+# Publications
+
+```{r PUBLICATIONS}
+pubs_data<-readRDS("pubs_data.rds")
+
+pubs_data %>%
+  arrange(desc(year)) %>%
+  detailed_entries(
+    what = title_string,
+    when = year,
+    with = author_string,
+    where = journal
+  )
+```
