@@ -11,8 +11,7 @@ headcolor: 990000
 aboutme: "I use computational tools to understand how marine microbial communities are shaped and respond to environmental change."
 docname: cv
 output: 
-  vitae::moderncv:
-    theme: classic
+  vitae::awesomecv
 ---
 
 ```{r setup, include=FALSE}
@@ -21,19 +20,98 @@ knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE)
 library(vitae)
 library(tinytex)
+library(tidyverse)
+library(data.table)
+
+cv_info<-fread("cv_input_data/cv_info.tsv",sep="\t",header=T)
+cv_info<-cv_info %>%
+  arrange(end_year) %>%
+  mutate(when=gsub("NA-","",paste(end_month,end_year,sep="-")))
 ```
 
+# Academic Information
+
+```{r ACADEMIC_INFO}
+cv_info %>%
+  filter(section=="academic") %>%
+  detailed_entries(
+    what = with,
+    when = when,
+    with = what,
+    where = where
+  )
+```
+
+# Grants and Contracts
+
+```{r GRANT_CONTRACT}
+cv_info %>%
+  filter(section=="grant_contract") %>%
+  detailed_entries(
+    what = with,
+    when = when,
+    with = what,
+    where = where
+  )
+```
+
+# Courses
+
+```{r COURSES}
+cv_info %>%
+  filter(section=="course") %>%
+  detailed_entries(
+    what = with,
+    when = when,
+    with = what,
+    where = where
+  )
+```
+
+# Teaching
+
+```{r TEACHING}
+cv_info %>%
+  filter(section=="teaching") %>%
+  detailed_entries(
+    what = with,
+    when = when,
+    with = what,
+    where = where
+  )
+```
+
+\newpage
+# Oral presentations in conferences
+
+```{r ORAL}
+cv_info %>%
+  filter(section=="oral") %>%
+  detailed_entries(
+    what = with,
+    when = when,
+    with = what,
+    where = where
+  )
+```
+
+# Posters in conferences
+
+```{r POSTER}
+cv_info %>%
+  filter(section=="poster") %>%
+  detailed_entries(
+    what = with,
+    when = when,
+    with = what,
+    where = where
+  )
+```
+\newpage
 # Publications
 
 ```{r PUBLICATIONS}
-pubs_data<-readRDS("pubs_data.rds")
-
-pubs_data %>%
-  arrange(desc(year)) %>%
-  detailed_entries(
-    what = title_string,
-    when = year,
-    with = author_string,
-    where = journal
-  )
+bibliography_entries("cv_input_data/my_pubs.bib") %>%
+  arrange(desc(year))
 ```
+

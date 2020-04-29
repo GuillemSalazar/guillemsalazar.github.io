@@ -25,7 +25,7 @@ Microbial populations sustain the balance of geochemistry and life in the ocean 
 
 ### Seelected publications
 
-- **Guillem Salazar**, Lucas Paoli, *et al.* [Gene Expression Changes and Community Turnover Differentially Shape the Global Ocean Metatranscriptome](http://dx.doi.org/10.1016/j.cell.2019.10.014). **Cell** 179 (5) 1068-1083.e21
+- **Guillem Salazar**, Lucas Paoli, *et al.* (2019) [Gene Expression Changes and Community Turnover Differentially Shape the Global Ocean Metatranscriptome](http://dx.doi.org/10.1016/j.cell.2019.10.014). **Cell** 179 (5) 1068-1083.e21
 
 ### Contact
 
