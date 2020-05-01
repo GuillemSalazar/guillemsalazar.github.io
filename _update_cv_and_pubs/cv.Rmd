@@ -10,8 +10,9 @@ date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: 990000
 aboutme: "I use computational tools to understand how marine microbial communities are shaped and respond to environmental change."
 docname: cv
-output: 
-  vitae::awesomecv
+output:
+  vitae::twentyseconds:
+    latex_engine: xelatex
 ---
 
 ```{r setup, include=FALSE}

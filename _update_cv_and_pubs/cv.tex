@@ -1,0 +1,247 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Twenty Seconds Resume/CV
+% LaTeX Template
+% Version 1.1 (8/1/17)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by
+% Vel (vel@LaTeXTemplates.com)
+%
+% Adapted to be an Rmarkdown template by Rob J Hyndman
+% 23 November 2018
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt,a4paper,]{twentysecondcv}
+
+\usepackage[scaled=0.86]{DejaVuSansMono}
+
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{csquotes}
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+\usepackage{booktabs}
+
+
+%%%% BIBLIOGRAPHY
+% Bibliography formatting
+
+\usepackage[sorting=ynt,citestyle=authoryear,bibstyle=authoryear-comp,defernumbers=true,maxnames=20,giveninits=true, bibencoding=utf8, terseinits=true, uniquename=init,dashed=false,doi=false,isbn=false,natbib=true,backend=biber]{biblatex}
+
+\DeclareFieldFormat{url}{\url{#1}}
+\DeclareFieldFormat[article]{pages}{#1}
+\DeclareFieldFormat[inproceedings]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[incollection]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{title}{\MakeCapital{#1}}
+\DeclareFieldFormat[article]{url}{}
+\DeclareFieldFormat[inproceedings]{title}{#1}
+\DeclareFieldFormat{shorthandwidth}{#1}
+\DeclareFieldFormat{extradate}{}
+
+% No dot before number of articles
+\usepackage{xpatch}
+\xpatchbibmacro{volume+number+eid}{\setunit*{\adddot}}{}{}{}
+
+% Remove In: for an article.
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{%
+  \printtext{\bibstring{in}\intitlepunct}}}
+
+%\makeatletter
+%\DeclareDelimFormat[cbx@textcite]{nameyeardelim}{\addspace}
+%\makeatother
+
+\setlength{\bibitemsep}{1.8pt}
+\setlength{\bibhang}{.9cm}
+%\renewcommand{\bibfont}{\fontsize{12}{14}}
+
+\renewcommand*{\bibitem}{\addtocounter{papers}{1}\item \mbox{}\hskip-0.9cm\hbox to 0.9cm{\hfill\arabic{papers}.~\,}}
+\defbibenvironment{bibliography}
+{\list{}
+  {\setlength{\leftmargin}{\bibhang}%
+   \setlength{\itemsep}{\bibitemsep}%
+   \setlength{\parsep}{\bibparsep}}}
+{\endlist}
+{\bibitem}
+
+\renewcommand{\bibfont}{\normalfont\fontsize{10}{12.4}\selectfont}
+% Counters for keeping track of papers
+\newcounter{papers}
+
+\DeclareSortingTemplate{ty}{
+  \sort{
+    \field{title}
+  }
+  \sort{
+    \field{year}
+  }
+}
+\DeclareBibliographyCategory{bib-/Users/guillemsalazar/Documents/guillemsalazar.github.io/_update_cv_and_pubs/cv_input_data/my_pubs.bib-3802050}
+\bibliography{/Users/guillemsalazar/Documents/guillemsalazar.github.io/_update_cv_and_pubs/cv_input_data/my_pubs.bib}
+
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
+
+% Profile pic
+\profilepic{../images/profile.png}
+
+\cvname{Guillem Salazar} % Your name
+
+\cvjobtitle{} % Job title/career
+\cvdate{May 2020} % Date of birth or date of CV??
+\cvaddress{ETH Zürich, Switzerland} % Short address/location, use \newline if more than 1 line is required
+\cvnumberphone{} % Phone number
+\cvsite{\href{http://guillemsalazar.github.io}{guillemsalazar.github.io}} % Personal website
+\cvmail{\href{mailto:guillems@ethz.ch}{\nolinkurl{guillems@ethz.ch}}} % Email address
+\cvtwitter{}
+\cvgithub{\href{https://github.com/GuillemSalazar}{GuillemSalazar}}
+\cvlinkedin{}
+
+% Templates for detailed entries
+% Arguments: what when with where why
+\usepackage{etoolbox}
+\def\detaileditem#1#2#3#4#5{
+\twentyitem{#2}{#1}{#3}{\ifx#4\empty\else#4\par\fi\ifx#5\empty\else{\begin{minipage}{0.7\textwidth}\begin{itemize}#5\end{itemize}\end{minipage}}\fi}}
+\def\detailedsection#1{\nopagebreak\begin{twenty}#1\end{twenty}}
+
+% Templates for brief entries
+% Arguments: what when with
+\def\briefitem#1#2#3{\twentyitemshort{#2}{#1. #3}}
+\def\briefsection#1{\nopagebreak\begin{twentyshort}#1\end{twentyshort}}
+
+\lfoot{\sf cv: Guillem Salazar}
+\rfoot{\sf\thepage}
+
+\begin{document}
+\aboutme{I use computational tools to understand how marine microbial communities are shaped and respond to environmental change.}
+
+% Skill bar section, each skill must have a value between 0 an 6 (float)
+%\skills{{pursuer of rabbits/5.8},{good manners/4},{outgoing/4.3},{polite/4},{Java/0.01}}
+
+% Skill text section, each skill must have a value between 0 an 6
+%\skillstext{{lovely/4},{narcissistic/3}}
+
+\makeprofile % Print the sidebar
+
+
+
+
+\hypertarget{academic-information}{%
+\section{Academic Information}\label{academic-information}}
+
+\detailedsection{\detaileditem{University of Valencia}{2007}{Degree in Biological Sciences}{Valencia, SPAIN}{\empty}\detaileditem{University of Valencia}{2008}{MSc in Biodiversity: Conservation and Evolution}{Valencia, SPAIN}{\empty}\detaileditem{Polytechnic University of Catalonia \& Marine Sciences Institute (ICM - CSIC)}{2019}{PhD. in Oceanography}{Barcelona, SPAIN}{\empty}\detaileditem{Sunagawa Lab, ETH Zürich}{current}{Postdoc}{Zürich, SWITZERLAND}{\empty}}
+
+\hypertarget{grants-and-contracts}{%
+\section{Grants and Contracts}\label{grants-and-contracts}}
+
+\detailedsection{\detaileditem{University of Valencia and Cavanilles Intitute for Biodiversity and Evolutionary Biology}{2007}{Introduction to Scientific Research Grant - Education and Science Ministry}{Valencia, SPAIN}{\empty}\detaileditem{University of Valencia and Cavanilles Intitute for Biodiversity and Evolutionary Biology}{2008}{Research Technician - Geronimo Forteza Programme}{Valencia, SPAIN}{\empty}\detaileditem{University of Southern California (USC), Los Angeles, CA, USA}{2011}{Grant for a stay at Dr. Fuhrman Lab}{Valencia, SPAIN}{\empty}\detaileditem{Marine Sciences Institute (ICM), CSIC}{2013}{JAE Predoc (Phd Grant/Contract)}{Barcelona, SPAIN}{\empty}\detaileditem{Marine Sciences Institute (ICM), CSIC}{2014}{Research Technician Contract}{Barcelona, SPAIN}{\empty}\detaileditem{Marine Sciences Institute (ICM), CSIC}{2015}{Research Technician Contract}{Barcelona, SPAIN}{\empty}}
+
+\hypertarget{courses}{%
+\section{Courses}\label{courses}}
+
+\detailedsection{\detaileditem{Cavanilles Intitute for Biodiversity and Evolutionary Biology}{2006}{II Scientific Workshop of ICBiBE}{Valencia, SPAIN}{\empty}\detaileditem{University of Valenciaand the Spanish Society for Limnology and the Spanish Society for Terrestrial Ecology}{2007}{International Course on Ecological Modelling}{Valencia, SPAIN}{\empty}\detaileditem{Universit- d'Orsay Paris XI y AgroParisTech}{2008}{Socrates Intensive Programme Mathematics and Biology}{Paris, FRANCE}{\empty}\detaileditem{}{2009}{Famoso III Scientific Cruise (Barcelona - Barcelona, Spain)}{}{\empty}\detaileditem{}{2010}{Citowork Cruise (Barcelona - Barcelona, Spain)}{}{\empty}\detaileditem{}{2010}{Inter-calibration Scientific Cruise - Malspina 2010 Expedition (Las Palmas de Gran Canaria, Spain - Cartagena, Spain)}{}{\empty}\detaileditem{Marine Sciences Institute (ICM), CSIC}{2010}{Methods in Microbial Oceanography Course}{Barcelona, SPAIN}{\empty}\detaileditem{}{2011}{Malaspina 2010 Scientific Cruise (Cadiz, Spain - Rio de Janeiro, Brazil)}{}{\empty}\detaileditem{MERG and University of Oslo, Department of Biology}{2011}{Bioinformatics for metagenomics and environmental sequencing}{Oslo, NORWAY}{\empty}\detaileditem{}{2012}{Tara Oceans Scientific Cruise (Bermudas - Açores, Portugal)}{}{\empty}}
+
+\hypertarget{teaching}{%
+\section{Teaching}\label{teaching}}
+
+\detailedsection{\detaileditem{Valencia's School for Health Studies (EVES)}{2013}{Practical applications to epidemiology}{Valencia, SPAIN}{\empty}\detaileditem{Valencia's School for Health Studies (EVES)}{2014}{Biostatistics for Doctors: practical applications}{Valencia, SPAIN}{\empty}}
+
+\newpage
+
+\hypertarget{oral-presentations-in-conferences}{%
+\section{Oral presentations in conferences}\label{oral-presentations-in-conferences}}
+
+\detailedsection{\detaileditem{Salazar, G., et al.}{2009}{Constatación empírica de un modelo estocàstico para predecir la extinción de especies en interacción}{II Congreso Nacional de Biodiversidad}{\empty}\detaileditem{Cornejo-Castillo, FM., Salazar, G., Stal, L., Hingamp, P., Gasol, J.M., Acinas, S.G.}{2012}{Biogeografia y diversidad de procariotas diazotrofos marinos mediante técnicas moleculares y genómicas}{IX Congreso de Microbiología del Medio Acuàtico}{\empty}\detaileditem{Salazar, G., Cornejo-Castillo, FM., Acinas, S.G., Gasol, J.M.}{2012}{Global beta-diversity patterns in deep-ocean bacterial communities}{ASLO Aquatic Sciences Meeting}{\empty}\detaileditem{Gasol, J.M., Salazar, G., Cornejo-Castillo, FM., Pernice, M., Gomes, A., Massana, R., Moràn, X.G., Arrieta, T., Duarte, C., Acinas, S.G.}{2013}{Exploración de la diversidad microbiana en el océano profundo: primeros Resultados de la Expedición Malaspina 2010}{IV Congreso de Biodiversidad}{\empty}\detaileditem{Salazar G., Logares R., Cornejo-Castillo F.M., Sunagawa S., Bork P., Gasol J.M. and Acinas S.G.}{2014}{Patrones de diversidad globales de procariotas y picoeucariotas en el océano fótico y afótico}{X Congreso de Microbiología del Medio Acuàtico}{\empty}\detaileditem{Salazar G., Cornejo-Castillo F.M., Logares R., Sunagawa S., Ludicone D., Lionel G., Stemmann L., Laxenaire R., Speich S., Gasol J.M., Acinas S.G.}{2015}{A global ocean metagenomic survey reveals events of vertical connectivity in oceanic microbial communities}{SAME 14}{\empty}\detaileditem{Mestre M., Salazar G., Cornejo-Castillo F.M., Sala M.M., Acinas S.G., Gasol J.M.}{2015}{Living on particles in the ocean surface and the bathypelagic: prokaryotic groups involved and phylogenetic conservation of the particle-association trait}{SAME 14}{\empty}}
+
+\hypertarget{posters-in-conferences}{%
+\section{Posters in conferences}\label{posters-in-conferences}}
+
+\detailedsection{\detaileditem{Salazar, G., et al.}{2007}{El papel del canibalismo en copepodos dentro de una red trófica sencilla}{XI Conferencia Española y I Encuentro Iberamericano de Biometría}{\empty}\detaileditem{Salazar, G., et al.}{2007}{Un modelo nulo para la conectancia de redes de interacció planta-animal}{XI Conferencia Española y I Encuentro Iberamericano de Biometría}{\empty}\detaileditem{Salazar, G., Sarmento, H., DÕez-Vives, C., Ferrera, I., Gasol, J.M., and Acinas, S.G.}{2011}{Diversity patterns of cultured marine bacteria ussing different organic matter sources as compared to single amplified genomes}{SAME 12}{\empty}\detaileditem{Salazar, G., Logares, R., Cornejo-Castillo, FM., Ferrera, I., Sarmento, H., Gasol, JM., Acinas, S.G.}{2013}{Exploración de la diversidad microbiana en en distintos contextos ecológicos dentro de la expedición TARA Oceans}{IV Congreso de Biodiversidad}{\empty}}
+\newpage
+
+\hypertarget{publications}{%
+\section{Publications}\label{publications}}
+
+\defbibheading{bib-/Users/guillemsalazar/Documents/guillemsalazar.github.io/_update_cv_and_pubs/cv_input_data/my_pubs.bib-3802050}{}
+\addtocategory{bib-/Users/guillemsalazar/Documents/guillemsalazar.github.io/_update_cv_and_pubs/cv_input_data/my_pubs.bib-3802050}{article26,
+article21,
+article22,
+article23,
+article24,
+article25,
+article20,
+article17,
+article18,
+article19,
+article16,
+article9,
+article10,
+article11,
+article12,
+article13,
+article14,
+article15,
+article8,
+article2,
+article6,
+article7,
+article1,
+article5,
+article3,
+article4}
+\newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
+\printbibliography[category=bib-/Users/guillemsalazar/Documents/guillemsalazar.github.io/_update_cv_and_pubs/cv_input_data/my_pubs.bib-3802050,heading=none]\setcounter{papers}{0}
+
+\nocite{article26,
+article21,
+article22,
+article23,
+article24,
+article25,
+article20,
+article17,
+article18,
+article19,
+article16,
+article9,
+article10,
+article11,
+article12,
+article13,
+article14,
+article15,
+article8,
+article2,
+article6,
+article7,
+article1,
+article5,
+article3,
+article4}
+
+
+
+\end{document}

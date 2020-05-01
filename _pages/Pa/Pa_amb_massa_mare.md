@@ -6,7 +6,7 @@ title: "Pa elaborat amb massa mare"
 
 * 180 g de massa mare hidratada al 100%
 * 510 g de farina
-* 308 g de farina
+* 308 g d'aigua
 * 11 g de sal  
 
 ## Elaboració
@@ -15,7 +15,7 @@ title: "Pa elaborat amb massa mare"
 
 **Pas 2 (+4h; ej. 12 AM) Autòlisi:** En un bol gran barregem la massa mare, la farina i l'aigua amb les mans fins obtenir una massa homogènia. Cobrim amb un film i deixem l'autòlisi durant `1 hora`.
 
-**Pas 3 (+5h; ej. 1 PM) Amassat:** Passem a una superfície de treball neta, sense farina, i amassem 2-3 minuts deixant reposar 5-6 minuts. En total amassarem al voltant de `15-20 minuts`, sense contar els reposos.
+**Pas 3 (+5h; ej. 1 PM) Amassat:** Afegim la sal. Passem a una superfície de treball neta, sense farina, i amassem 2-3 minuts deixant reposar 5-6 minuts. En total amassarem al voltant de `15-20 minuts`, sense contar els reposos.
 
 **Pas 4 (+5:30h; ej. 1:30 PM) Primera fermentació:** Preparem un recipient hermètic i distribuïm oli per les parets. Introduïm la massa i tapem. Deixem fermentar durant `5 hores` a temperatura ambient (~21 ºC). Deurem veure com el volum inicial es duplica. Pleguem la massa dos cops als 45 min i a 1 h 30 min.
 
