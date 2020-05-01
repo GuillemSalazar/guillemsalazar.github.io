@@ -4,10 +4,17 @@ doi2df<-function(dois=NULL,pattern_bold="Guillem Salazar",tsv_output_path="publi
   library(tidyverse)
   library(readr)
   
-  
   # Query DOIs
   cat("Retrieving DOI info and saving a .bib file to",bib_output_path,"\n")
   my_citations_bibtext<-cr_cn(dois = dois)
+  
+  for (i in 1:length(my_citations_bibtext)){ # Rename articles to avoid duplicated names
+    tmp<-my_citations_bibtext[[i]] %>% str_split(",")
+    tmp[[1]][1]<-paste("@article{article",i,sep="")
+    tmp<-paste0(tmp[[1]],collapse = ",")
+    my_citations_bibtext[[i]]<-tmp
+  }
+  
   readr::write_lines(my_citations_bibtext, bib_output_path)
   
   cat("Retrieving DOI info and parsing it to a data frame\n")

@@ -21,12 +21,13 @@ knitr::opts_chunk$set(echo = FALSE,
 library(vitae)
 library(tinytex)
 library(tidyverse)
-library(data.table)
+library(xlsx)
 
-cv_info<-fread("cv_input_data/cv_info.tsv",sep="\t",header=T)
+cv_info<-read.xlsx("cv_input_data/cv_info.xlsx",sheetIndex = 1)
 cv_info<-cv_info %>%
+  mutate_if(is.factor,as.character) %>%
   arrange(end_year) %>%
-  mutate(when=gsub("NA-","",paste(end_month,end_year,sep="-")))
+  mutate(when=end_year)
 ```
 
 # Academic Information

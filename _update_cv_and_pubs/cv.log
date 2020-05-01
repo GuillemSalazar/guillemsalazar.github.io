@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.4.29)  29 APR 2020 12:48
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.4.29)  30 APR 2020 09:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1266,29 +1266,7 @@ Package biblatex Info: ... file 'cv.bbl' found.
 (./cv.bbl
 LaTeX Font Info:    Font shape `TU/SourceSansPro(0)/m/n' will be
 (Font)              scaled to size 10.0pt on input line 132.
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                Rojo_2008:1
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                Salazar_2015:1
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
 )
-
-Package biblatex Warning: citation 'Salazar_2015:1' was not found at all in the
- .bbl, bibliography labels cannot be generated, please correct the citation.
-
-
-Package biblatex Warning: citation 'Rojo_2008:1' was not found at all in the .b
-bl, bibliography labels cannot be generated, please correct the citation.
-
 Package biblatex Info: Reference section=0 on input line 153.
 Package biblatex Info: Reference segment=0 on input line 153.
 \headertextwidth=\skip104
@@ -1377,7 +1355,7 @@ zar, and R Massana (Apr. 2013). Biogeography of the uncultured marine picoeukar
 y-
  []
 
-[4]
+[4] [5]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 268.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 268.
 (./cv.aux)
@@ -1397,12 +1375,12 @@ Package logreq Info: Writing requests to 'cv.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39214 strings out of 481455
- 783903 string characters out of 5927421
- 1588648 words of memory out of 5000000
- 55934 multiletter control sequences out of 15000+600000
+ 39221 strings out of 481455
+ 783793 string characters out of 5927421
+ 1588285 words of memory out of 5000000
+ 55941 multiletter control sequences out of 15000+600000
  536662 words of font info for 110 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 67i,11n,112p,1907b,4759s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,11n,112p,1842b,4901s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on cv.pdf (4 pages).
+Output written on cv.pdf (5 pages).
