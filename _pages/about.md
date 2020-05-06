@@ -11,7 +11,7 @@ redirect_from:
 ### Bio
 
 - Postdoc, [Sunagawa Lab](https://micro.biol.ethz.ch/research/sunagawa.html), ETH Zürich (Switzerland), current
-- PhD. in *Oceanography*, [Polytechnic University of Catalonia](https://www.upc.edu/en?set_language=en) & [Marine Sciences Institute (ICM - CSIC)](http://www.icm.csic.es/?q=en), 2019
+- PhD. in *Oceanography*, [Polytechnic University of Catalonia](https://www.upc.edu/en?set_language=en) & [Marine Sciences Institute (ICM - CSIC)](http://www.icm.csic.es/?q=en) (Spain), 2019
 - MSc in *Biodiversity: Conservation and Evolution*, [University of Valencia](https://www.uv.es/uvweb/college/en/university-valencia-1285845048380.html) (Spain), 2008
 - Diploma in *Biological Sciences*, [University of Valencia](https://www.uv.es/uvweb/college/en/university-valencia-1285845048380.html) (Spain), 2007
 
