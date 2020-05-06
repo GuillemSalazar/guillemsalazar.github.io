@@ -7,13 +7,17 @@ email: "guillems@ethz.ch"
 github: GuillemSalazar
 orcid: 0000-0002-9786-1493
 date: "`r format(Sys.time(), '%B %Y')`"
-headcolor: 990000
+headcolor: 007599
 aboutme: "I use computational tools to understand how marine microbial communities are shaped and respond to environmental change."
 docname: cv
-output:
-  vitae::twentyseconds:
-    latex_engine: xelatex
+output: 
+  vitae::moderncv:
+    theme: casual
 ---
+
+```{r, include=FALSE}
+options(tinytex.verbose = TRUE)
+```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE,
@@ -37,9 +41,9 @@ cv_info<-cv_info %>%
 cv_info %>%
   filter(section=="academic") %>%
   detailed_entries(
-    what = with,
+    what = what,
     when = when,
-    with = what,
+    with = with,
     where = where
   )
 ```
@@ -50,9 +54,9 @@ cv_info %>%
 cv_info %>%
   filter(section=="grant_contract") %>%
   detailed_entries(
-    what = with,
+    what = what,
     when = when,
-    with = what,
+    with = with,
     where = where
   )
 ```
@@ -63,9 +67,9 @@ cv_info %>%
 cv_info %>%
   filter(section=="course") %>%
   detailed_entries(
-    what = with,
+    what = what,
     when = when,
-    with = what,
+    with = with,
     where = where
   )
 ```
@@ -76,9 +80,9 @@ cv_info %>%
 cv_info %>%
   filter(section=="teaching") %>%
   detailed_entries(
-    what = with,
+    what = what,
     when = when,
-    with = what,
+    with = with,
     where = where
   )
 ```
@@ -90,9 +94,9 @@ cv_info %>%
 cv_info %>%
   filter(section=="oral") %>%
   detailed_entries(
-    what = with,
+    what = what,
     when = when,
-    with = what,
+    with = with,
     where = where
   )
 ```
@@ -103,9 +107,9 @@ cv_info %>%
 cv_info %>%
   filter(section=="poster") %>%
   detailed_entries(
-    what = with,
+    what = what,
     when = when,
-    with = what,
+    with = with,
     where = where
   )
 ```
@@ -113,7 +117,16 @@ cv_info %>%
 # Publications
 
 ```{r PUBLICATIONS}
-bibliography_entries("cv_input_data/my_pubs.bib") %>%
-  arrange(desc(year))
+pbs_df<-readRDS("cv_input_data/pubs_data.rds")
+pbs_df %>%
+  mutate(author_string=gsub("\\*","",author_string)) %>%
+  mutate(journal_string=gsub("\\*","",journal_string)) %>%
+  detailed_entries(
+    what = title_string,
+    when = year,
+    with = author_string,
+    where = journal_string
+  )
+
 ```
 
